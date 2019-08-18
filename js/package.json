@@ -1,0 +1,20 @@
+{
+  "name": "node-grpc-stability",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/32leaves/node-grpc-stability.git",
+  "author": "Christian Weichel <christian.weichel@typefox.io>",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "grpc-tools": "^1.8.0"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "generate": "yarn grpc_tools_node_protoc --js_out=import_style=commonjs,binary:. --grpc_out=. --plugin=protoc-gen-grpc=./node_modules/.bin/grpc_tools_node_protoc_plugin -I ../protocol hello.proto"
+  },
+  "dependencies": {
+    "google-protobuf": "^3.9.1",
+    "grpc": "^1.22.2"
+  }
+}
